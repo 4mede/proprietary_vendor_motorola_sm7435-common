@@ -27,7 +27,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/ap_gain.bin:$(TARGET_COPY_OUT_VENDOR)/etc/ap_gain.bin \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/ap_gain_mmul.bin:$(TARGET_COPY_OUT_VENDOR)/etc/ap_gain_mmul.bin \
-    vendor/motorola/sm7435-common/proprietary/vendor/etc/charger_fw_fstab.qti:$(TARGET_COPY_OUT_VENDOR)/etc/charger_fw_fstab.qti \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/cne/mwqem.conf:$(TARGET_COPY_OUT_VENDOR)/etc/cne/mwqem.conf \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/cne/profileMwqem.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/profileMwqem.xml \
     vendor/motorola/sm7435-common/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile1.xml \
@@ -346,9 +345,12 @@ PRODUCT_PACKAGES += \
     libadreno_utils \
     libadropbox \
     libadsp_default_listener \
+    libadspd \
     libadsprpc \
     libapengine \
     libappclassifier \
+    libaualgo_azp_component \
+    libaualgo_azp_wrapper \
     libaualgo_foundation \
     libaudio_log_utils \
     libbacklight-calib \
@@ -386,6 +388,7 @@ PRODUCT_PACKAGES += \
     libembmsservice \
     libengineplugin \
     libeva \
+    libext_tflite_c \
     libfastcvdsp_stub \
     libfastcvopt \
     libgame_enhance \
@@ -572,6 +575,7 @@ PRODUCT_PACKAGES += \
     libsnapdragoncolor-qdcm \
     libsns_device_mode_stub \
     libsns_direct_channel_stub \
+    libsns_registry_skel \
     libsnsapi \
     libsnsdiaglog \
     libsoc_helper \
@@ -582,6 +586,7 @@ PRODUCT_PACKAGES += \
     libstandbyfeature \
     libsubsystem_control \
     libsys_info_cache \
+    libsysmon_cdsp_skel \
     libsystem_health_mon \
     libtestutils \
     libthermalclient \
@@ -868,7 +873,6 @@ PRODUCT_PACKAGES += \
     adpl \
     adsprpcd \
     cdsprpcd \
-    charge_only_mode \
     cnd \
     cnss-daemon \
     diag-router \
@@ -938,6 +942,9 @@ PRODUCT_PACKAGES += \
     sensors.qti \
     shsusrd \
     sscrpcd \
+    ssr_diag \
+    ssr_setup \
+    subsystem_ramdump \
     tftp_server \
     thermal-engine-v2 \
     time_daemon \
