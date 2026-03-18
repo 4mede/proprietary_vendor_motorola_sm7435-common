@@ -1,6 +1,6 @@
 <XML>
 <!--
- Copyright (c) 2021 Qualcomm Technologies, Inc.
+ Copyright (c) 2022 Qualcomm Technologies, Inc.
  All Rights Reserved.
  Confidential and Proprietary - Qualcomm Technologies, Inc.
 -->
@@ -67,16 +67,12 @@
   <Param59>8</Param59>
   <Param60>16.0</Param60>
   <Param61>0.64</Param61>
-  <Param62>180</Param62>
-  <Param63>18200000</Param63>
-  <Param64>13600000</Param64>
-  <Param65>18200000</Param65>
-  <Param66>13600000</Param66>
-  <Param69>5</Param69>
-  <Param70>6</Param70>
-  <Param71>8</Param71>
-  <Param72>1.1</Param72>
-  <Param73>25</Param73>
+  <Param62>5</Param62>
+  <Param63>6</Param63>
+  <Param64>8</Param64>
+  <Param65>1.1</Param65>
+  <Param66>25</Param66>
+
 <!-- Example
   <Overrides>
     <Override0>

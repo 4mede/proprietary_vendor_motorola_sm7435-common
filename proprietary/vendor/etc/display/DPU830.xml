@@ -1,11 +1,10 @@
 <XML>
 <!--
-Copyright (c) 2022 Qualcomm Technologies, Inc.
+Copyright (c) 2024 Qualcomm Technologies, Inc.
  All Rights Reserved.
  Confidential and Proprietary - Qualcomm Technologies, Inc.
 -->
 <SDE830>
-  <Default>
     <Param0>6</Param0>
     <Param1>8</Param1>
     <Param2>4</Param2>
@@ -84,15 +83,5 @@ Copyright (c) 2022 Qualcomm Technologies, Inc.
     </Overrides>
     -->
 
-  </Default>
-
-  <Limit0>
-    <Param62>90</Param62>
-  </Limit0>
-
-  <Limit1>
-    <Param62>90</Param62>
-  </Limit1>
-
-</SDE830>
+  </SDE830>
 </XML>

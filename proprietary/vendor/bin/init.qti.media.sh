@@ -35,6 +35,7 @@
 #===============================================================================
 
 build_codename=`getprop vendor.media.system.build_codename`
+low_ram=`getprop ro.config.low_ram`
 
 if [ -f /sys/devices/soc0/soc_id ]; then
     soc_hwid=`cat /sys/devices/soc0/soc_id` 2> /dev/null
@@ -56,30 +57,64 @@ case "$target" in
                 ;;
         esac
         ;;
-    "parrot")
-        #Begin, chenmf5, IKSWT-56674, re-customize the qcom' parser to enable
-        #PARSER_AC3,PARSER_AVI,PARSER_3G2,PARSER_MP2TS,WAV,FLAC for QSS
-        setprop vendor.mm.target.enable.qcom_parser 201250
-        #End, chenmf5, IKSWT-56674
-
-        #Bgin, chenmf5, IKSWU-31546, disable QC parser to fix CTS
-        if [ $build_codename -ge "14" ]; then
-            setprop vendor.mm.target.enable.qcom_parser 0
-        fi
-        #End, IKSWU-31546
-
+    "blair")
+        setprop vendor.mm.target.enable.qcom_parser 0
+        setprop vendor.netflix.bsp_rev ""
         case "$soc_hwid" in
-            568|602|581|582|653|654)
-                setprop vendor.media.target_variant "_ravelin"
+            507|565)
+                setprop vendor.media.target_variant "_blair"
                 if [ $build_codename -le "14" ]; then
-                    setprop vendor.netflix.bsp_rev "Q4450-37037-1"
+                    setprop vendor.netflix.bsp_rev "Q4350-32962-1"
                 fi
                 ;;
+            578)
+                setprop vendor.media.target_variant "_blair_lite"
+                if [ $build_codename -le "14" ]; then
+                    setprop vendor.netflix.bsp_rev "Q4350-32962-1"
+                fi
+                ;;
+            454)
+                setprop vendor.media.target_variant "_holi"
+                if [ $build_codename -le "14" ]; then
+                    setprop vendor.netflix.bsp_rev "Q4350-32962-1"
+                fi
+                ;;
+            472)
+                setprop vendor.media.target_variant "_holi_pro"
+                if [ $build_codename -le "14" ]; then
+                    setprop vendor.netflix.bsp_rev "Q4350-32962-1"
+                fi
+                ;;
+        esac
+        ;;
+    # TODO-MB: Update below fields later
+    "pitti")
+        setprop vendor.mm.target.enable.qcom_parser 0
+        setprop vendor.netflix.bsp_rev ""
+        case "$soc_hwid" in
+            623)
+                if [ "$low_ram" == "true" ]; then
+                    setprop vendor.media.target_variant "_pitti_32go"
+                else
+                    setprop vendor.media.target_variant "_pitti"
+                    if [ $build_codename -le "13" ]; then
+                        setprop vendor.netflix.bsp_rev "Q4350-32962-1"
+                    fi
+                fi
+                ;;
+        esac
+        ;;
+    "parrot")
+        setprop vendor.mm.target.enable.qcom_parser 0
+        case "$soc_hwid" in
+            568|602|581|582)
+                setprop vendor.media.target_variant "_ravelin"
+                ;;
             *)
-                setprop vendor.media.target_variant "_parrot_v2"
+                setprop vendor.media.target_variant "_parrot_v0"
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc/sku_version` 2> /dev/null
-                if [ $sku_ver -eq 0 ]; then
-                    setprop vendor.media.target_variant "_parrot_v0"
+                if [ $sku_ver -eq 2 ]; then
+                    setprop vendor.media.target_variant "_parrot_v2"
                 elif [ $sku_ver -eq 1 ]; then
                     setprop vendor.media.target_variant "_parrot_v1"
                 fi
@@ -89,14 +124,7 @@ case "$target" in
         esac
         ;;
     "taro")
-        #Begin, jiash1, IKSWS-113527,enable Qcom's PARSER_FLAC
-        #Begin, jiash1, IKSWS-2578,re-customize the qcom' parser to enable
-        #Bgin, monicam, IKSWU-17369, disable QC parser to fix CTS
-        #PARSER_AC3,PARSER_AVI,PARSER_3G2,PARSER_MP2TS,WAV for QSS
-        setprop vendor.mm.target.enable.qcom_parser 0
-        #End, jiash1, IKSWS-2578
-        #End, jiash1, IKSWS-113527
-        #End, monicam, IKSWU-17369
+        setprop vendor.mm.target.enable.qcom_parser 1040463
         case "$soc_hwid" in
             506|547|564)
                 setprop vendor.media.target_variant "_diwali_v2"
@@ -108,25 +136,25 @@ case "$target" in
                     setprop vendor.media.target_variant "_diwali_v1"
                 fi
 
-                if [ $build_codename -le "14" ]; then
+                if [ $build_codename -le "13" ]; then
                     setprop vendor.netflix.bsp_rev "Q7450-35705-1"
                 fi
                 ;;
             591)
                 setprop vendor.media.target_variant "_ukee"
-                if [ $build_codename -le "14" ]; then
+                if [ $build_codename -le "13" ]; then
                     setprop vendor.netflix.bsp_rev "Q8450-34634-1"
                 fi
                 ;;
             530|531|540)
                 setprop vendor.media.target_variant "_cape"
-                if [ $build_codename -le "14" ]; then
+                if [ $build_codename -le "13" ]; then
                     setprop vendor.netflix.bsp_rev "Q8450-34634-1"
                 fi
                 ;;
             *)
                 setprop vendor.media.target_variant "_taro"
-                if [ $build_codename -le "14" ]; then
+                if [ $build_codename -le "13" ]; then
                     setprop vendor.netflix.bsp_rev "Q8450-34634-1"
                 fi
                 ;;
@@ -153,19 +181,10 @@ case "$target" in
     "bengal")
         setprop vendor.mm.target.enable.qcom_parser 0
         case "$soc_hwid" in
-            586)
-                setprop vendor.media.target_variant "_khaje_iot"
-                ;;
-            518|561|585)
+            518|561|585|586)
                 setprop vendor.media.target_variant "_khaje_v0"
-                if [ $build_codename -le "14" ]; then
+                if [ $build_codename -le "13" ]; then
                     setprop vendor.netflix.bsp_rev "Q6115-31409-1"
-                fi
-                ;;
-            417|444)
-                setprop vendor.media.target_variant "_bengal_v1"
-                if [ $build_codename -le "14" ]; then
-                    setprop vendor.netflix.bsp_rev "Q4250-31409-1"
                 fi
                 ;;
         esac

@@ -43,13 +43,6 @@
             "sw_cache_coherency": false
         },
         "Presets": {
-            // platform value to force HDR disable. if this value is enabled
-            // then HDR is disabled. this value acts as a bit mask.
-            //  0x0 : no over ride,
-            //  0x1 : disables decoder HDR,
-            //  0x2 : disbaled encoder HDR,
-            //  0x3 : disables both decoder and encoder HDR.
-            "vidc_disable_hdr" : 3,
             // this is used for secure decoding performance boost handling
             // prefech sizes of internal & output buffers
             // internal : 200 MB (200 X 1)
@@ -113,12 +106,6 @@
             // Frameworks adds 4 buffers to achive smoothness for all resolutions. To reduce memory usage
             // for higher resolutions(> 4k) reduce the output delay by smoothnessFactor.
             "smoothnessFactor": 4,
-            // set cpu affinity to bind to special core for all video threads
-            // 1 1 1 1 <big core> 1 1 1 1 <small core>
-            // 0 means don't set special affinity
-            "cpuaffinity_set": 0,
-            // this gives number of CPU information on target
-            "cpu_count": 8,
             // override default primaries to BT709 for >=UHD decode
             "default_primaries_override" : 0,
 

@@ -32,6 +32,8 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0x2" MinorValue="0x0" Node="/sys/kernel/msm_performance/parameters/cpu_min_freq" /> <!-- cpu_min_freq -->
         <Config MajorValue="0x2" MinorValue="0x1" Node="/sys/kernel/msm_performance/parameters/cpu_max_freq" /> <!-- cpu_max_freq -->
         <Config MajorValue="0x3" MinorValue="0x0" Node="/proc/sys/walt/sched_boost" />
+
+        <Config MajorValue="0x3" MinorValue="0x2" Supported="no" /> <!-- sched_migration_cost_ns -->
         <Config MajorValue="0x3" MinorValue="0x3" Supported="no" /> <!-- sched_small_task -->
         <Config MajorValue="0x3" MinorValue="0x6" Supported="no" /> <!-- sched_init_task_load -->
         <Config MajorValue="0x3" MinorValue="0x7" Supported="no" /> <!-- sched_upmigrate -->
@@ -68,6 +70,7 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0x3" MinorValue="0x32" Node="/proc/sys/walt/walt_rtg_cfs_boost_prio" />
         <Config MajorValue="0x3" MinorValue="0x33" Node="/proc/sys/walt/sched_force_lb_enable" />
         <Config MajorValue="0x3" MinorValue="0x34" Node="/proc/sys/walt/sched_low_latency" />
+        <Config MajorValue="0x3" MinorValue="0x35" Supported="no" /> <!-- sched_min_granularity_ns -->
         <Config MajorValue="0x3" MinorValue="0x36" Node="/proc/sys/walt/walt_low_latency_task_threshold" />
         <Config MajorValue="0x3" MinorValue="0x37" Supported="no" /> <!-- Enabled till Kernel 4.19 -->
         <Config MajorValue="0x3" MinorValue="0x38" Node="/proc/sys/walt/%s" Supported="yes"/>
@@ -106,6 +109,15 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0x6" MinorValue="0x10" Supported="no" />
         <Config MajorValue="0x6" MinorValue="0x11" Supported="no" />
         <Config MajorValue="0x6" MinorValue="0x12" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x13" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x15" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x16" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x17" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x18" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x19" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x1A" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x1B" Supported="no" />
+        <Config MajorValue="0x6" MinorValue="0x1C" Supported="no" />
 
         <Config MajorValue="0xA" MinorValue="0x5" Supported="no" />
         <Config MajorValue="0xA" MinorValue="0x6" Supported="no" />
@@ -115,6 +127,7 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0xB" MinorValue="0x2" Node="/proc/sys/walt/input_boost/input_boost_freq" />
         <Config MajorValue="0xB" MinorValue="0x3" Supported="no" />
         <Config MajorValue="0xB" MinorValue="0x6" Supported="no" /><!-- disable_ppr -->
+        <Config MajorValue="0xB" MinorValue="0x10" Supported="no" /><!-- enable_dynpf -->
 
         <!-- LLCC_DDR_BW old opcodes unsupported-->
         <Config MajorValue="0xC" MinorValue="0x0" Supported="no" />
@@ -166,7 +179,9 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0xD" MinorValue="0x1D" Supported="no" />
         <Config MajorValue="0xD" MinorValue="0x21" Supported="no" />
         <Config MajorValue="0xD" MinorValue="0x23" Supported="no" />
+        <Config MajorValue="0xD" MinorValue="0x24" Supported="no" />
         <Config MajorValue="0xD" MinorValue="0x25" Supported="no" />
+        <Config MajorValue="0xD" MinorValue="0x28" Supported="no" />
 
         <Config MajorValue="0xE" MinorValue="0x0" Supported="no" />
         <Config MajorValue="0xE" MinorValue="0x1" Supported="no" />
@@ -174,6 +189,8 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0xE" MinorValue="0x3" Supported="no" />
         <Config MajorValue="0xE" MinorValue="0x4" Supported="no" />
         <Config MajorValue="0xE" MinorValue="0x5" Supported="no" />
+
+        <Config MajorValue="0xF" MinorValue="0x7" Supported="no" />
 
     </PerfResources>
 </ResourceConfigs>
