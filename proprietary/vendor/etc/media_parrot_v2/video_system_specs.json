@@ -43,6 +43,13 @@
             "sw_cache_coherency": false
         },
         "Presets": {
+            // platform value to force HDR disable. if this value is enabled
+            // then HDR is disabled. this value acts as a bit mask.
+            //  0x0 : no over ride,
+            //  0x1 : disables decoder HDR,
+            //  0x2 : disbaled encoder HDR,
+            //  0x3 : disables both decoder and encoder HDR.
+            "vidc_disable_hdr" : 3,
             // this is used for secure decoding performance boost handling
             // prefech sizes of internal & output buffers
             // internal : 200 MB (200 X 1)

@@ -120,3 +120,4 @@ inotify_rm_watch: 1
 shutdown: 1
 gettimeofday: 1
 kill: 1
+fchown: 1

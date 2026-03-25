@@ -117,6 +117,8 @@ case "$target" in
                     setprop vendor.media.target_variant "_parrot_v2"
                 elif [ $sku_ver -eq 1 ]; then
                     setprop vendor.media.target_variant "_parrot_v1"
+                elif [ $sku_ver -eq 4 ]; then
+                    setprop vendor.media.target_variant "_parrot_v3"
                 fi
 
                 setprop vendor.netflix.bsp_rev "Q6450-36256-1"
@@ -197,5 +199,14 @@ case "$target" in
         ;;
     "monaco")
         setprop vendor.media.target_variant "_monaco"
+        ;;
+    "vienna")
+        setprop vendor.mm.target.enable.qcom_parser 0
+        setprop vendor.netflix.bsp_rev ""
+        case "$soc_hwid" in
+            669|670)
+                setprop vendor.media.target_variant "_vienna"
+            ;;
+        esac
         ;;
 esac

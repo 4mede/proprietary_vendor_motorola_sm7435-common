@@ -67,13 +67,12 @@ Copyright (c) 2022 Qualcomm Technologies, Inc.
   <Param59>8</Param59>
   <Param60>16.0</Param60>
   <Param61>0.64</Param61>
-  <Param62>180</Param62>
-  <Param63>7000000</Param63>
-  <Param64>4200000</Param64>
-  <Param65>7400000</Param65>
-  <Param66>6400000</Param66>
-  <Param67>3500.0</Param67>
-  <Param68>4100.0</Param68>
+  <Param70>7000000</Param70>
+  <Param71>4200000</Param71>
+  <Param72>7400000</Param72>
+  <Param73>6400000</Param73>
+  <Param76>3500</Param76>
+  <Param77>4100</Param77>
 
     <!-- Example
     <Overrides>

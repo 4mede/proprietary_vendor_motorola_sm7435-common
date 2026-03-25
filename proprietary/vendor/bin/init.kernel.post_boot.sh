@@ -152,10 +152,7 @@ function configure_memory_parameters() {
 	if [ $Major -lt 5 ] || { [ $Major -eq 5 ] && [ $Minor -le 10 ]; }; then
 		# Disable wsf for all targets beacause we are using efk.
 		# wsf Range : 1..1000 So set to bare minimum value 1.
-	product_name=`getprop ro.product.device`
-	if [ "$product_name" != "cuscoi" ]; then
-	    echo 1 > /proc/sys/vm/watermark_scale_factor
-	fi
+		echo 1 > /proc/sys/vm/watermark_scale_factor
 	fi
 
 	#Set per-app max kgsl reclaim limit and per shrinker call limit

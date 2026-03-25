@@ -1580,12 +1580,9 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libc",
-                "libcutils",
-                "libutils",
                 "liblog",
                 "libGPTEE_vendor",
                 "libminkdescriptor",
-                "libminksocket_vendor",
                 "libdmabufheap",
                 "libc++",
                 "libm",
@@ -1642,7 +1639,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libc",
-                "libcutils",
                 "libutils",
                 "liblog",
                 "libc++",
@@ -5495,6 +5491,7 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libbase",
                 "libbinder",
+                "libadropbox",
                 "liblog",
                 "libqsap_sdk",
                 "libhidlbase",
@@ -7016,7 +7013,7 @@ cc_prebuilt_library_shared {
                 "libbinder_ndk",
                 "qtiPeripheralMgr",
                 "vendor.qti.hardware.radio.ims-V16-ndk",
-                "vendor.qti.hardware.radio.qtiradio-V14-ndk",
+                "vendor.qti.hardware.radio.qtiradio-V16-ndk",
                 "vendor.qti.hardware.radio.am-V1-ndk",
                 "vendor.qti.hardware.radio.qcrilhook-V1-ndk",
                 "qcrilNr_aidl_common",
@@ -12778,7 +12775,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.qtiradio-V14-ndk",
+    name: "vendor.qti.hardware.radio.qtiradio-V16-ndk",
     owner: "motorola",
     strip: {
         none: true,
@@ -12786,7 +12783,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio-V14-ndk.so",
+                "proprietary/vendor/lib64/vendor.qti.hardware.radio.qtiradio-V16-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -16858,6 +16855,7 @@ cc_prebuilt_binary {
                 "android.hardware.graphics.mapper@4.0",
                 "android.hardware.graphics.common@1.2",
                 "vendor.qti.hardware.display.config-V12-ndk",
+                "libvndksupport",
                 "libc++",
                 "libc",
                 "libm",

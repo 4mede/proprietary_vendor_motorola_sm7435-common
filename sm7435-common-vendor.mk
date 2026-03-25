@@ -686,7 +686,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.internal.deviceinfo-V1-ndk \
     vendor.qti.hardware.radio.lpa-V1-ndk \
     vendor.qti.hardware.radio.qcrilhook-V1-ndk \
-    vendor.qti.hardware.radio.qtiradio-V14-ndk \
+    vendor.qti.hardware.radio.qtiradio-V16-ndk \
     vendor.qti.hardware.radio.qtiradioconfig-V6-ndk \
     vendor.qti.hardware.radio.uim-V1-ndk \
     vendor.qti.hardware.radio.uim_remote_client-V1-ndk \
