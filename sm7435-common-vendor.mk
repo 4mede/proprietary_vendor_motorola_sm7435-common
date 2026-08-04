@@ -6,7 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/motorola/sm7435-common
 
 PRODUCT_COPY_FILES += \
-    vendor/motorola/sm7435-common/proprietary/product/etc/permissions/privapp-permissions-com.google.android.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.google.android.euicc.xml \
     vendor/motorola/sm7435-common/proprietary/system/etc/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
     vendor/motorola/sm7435-common/proprietary/system/etc/sysconfig/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     vendor/motorola/sm7435-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
@@ -731,7 +730,6 @@ PRODUCT_PACKAGES += \
     CneApp \
     IWlanService \
     TimeService \
-    EuiccGoogle \
     ImsRcsService \
     QCC \
     QtiTelephonyService \
@@ -908,5 +906,15 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.fm-V1-ndk \
     vendor.qti.hardware.fm@1.0 \
     fm_hci.xml
+
+endif
+
+ifeq ($(TARGET_HAS_ESIM),true)
+
+PRODUCT_COPY_FILES += \
+    vendor/motorola/sm7435-common/proprietary/product/etc/permissions/privapp-permissions-com.google.android.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.google.android.euicc.xml
+
+PRODUCT_PACKAGES += \
+    EuiccGoogle
 
 endif
