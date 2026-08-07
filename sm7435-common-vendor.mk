@@ -709,6 +709,8 @@ PRODUCT_PACKAGES += \
     libimsmedia_jni \
     libqcc \
     libqcc_file_agent_sys \
+    libqccdme \
+    libqccfileservice \
     vendor.qti.ImsRtpService-V1-ndk \
     vendor.qti.ImsRtpService-V2-ndk \
     vendor.qti.diaghal@1.0 \
