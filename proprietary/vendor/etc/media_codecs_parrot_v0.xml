@@ -88,7 +88,6 @@
 -->
 
 <MediaCodecs>
-    <Include href="media_codecs_c2_audio.xml" />
     <Settings>
         <Setting name="max-video-encoder-input-buffers" value="11" />
     </Settings>
@@ -123,8 +122,8 @@
             <Limit name="frame-rate" range="1-480" />
             <Limit name="concurrent-instances" max="16" />
             <Feature name="adaptive-playback" />
-            <Feature name="dynamic-color-aspects" />
             <Feature name="low-latency" />
+            <Feature name="dynamic-color-aspects" />
             <Feature name="can-swap-width-height" required="true" />
             <Limit name="performance-point-3840x2160" value="60" />
             <Limit name="performance-point-4096x2160" value="60" />
@@ -141,9 +140,9 @@
             <Limit name="bitrate" range="1-40000000" />
             <Limit name="frame-rate" range="1-60" />
             <Feature name="adaptive-playback" />
-            <Feature name="dynamic-color-aspects" />
             <Feature name="secure-playback" required="true" />
             <Feature name="low-latency" />
+            <Feature name="dynamic-color-aspects" />
             <Feature name="can-swap-width-height" required="true" />
             <Limit name="concurrent-instances" max="3" />
             <Limit name="performance-point-3840x2160" value="60" />
@@ -177,8 +176,8 @@
             <Limit name="bitrate" range="1-70000000" />
             <Limit name="frame-rate" range="1-480" />
             <Feature name="adaptive-playback" />
-            <Feature name="dynamic-color-aspects" />
             <Feature name="low-latency" />
+            <Feature name="dynamic-color-aspects" />
             <Feature name="can-swap-width-height" required="true" />
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-3840x2160" value="60" />
@@ -196,9 +195,9 @@
             <Limit name="bitrate" range="1-40000000" />
             <Limit name="frame-rate" range="1-60" />
             <Feature name="adaptive-playback" />
-            <Feature name="dynamic-color-aspects" />
             <Feature name="secure-playback" required="true" />
             <Feature name="low-latency" />
+            <Feature name="dynamic-color-aspects" />
             <Feature name="can-swap-width-height" required="true" />
             <Limit name="concurrent-instances" max="3" />
             <Limit name="performance-point-3840x2160" value="60" />
@@ -230,8 +229,8 @@
             <Limit name="bitrate" range="1-30000000" />
             <Limit name="frame-rate" range="1-60" />
             <Feature name="adaptive-playback" />
-            <Feature name="dynamic-color-aspects" />
             <Feature name="low-latency" />
+            <Feature name="dynamic-color-aspects" />
             <Feature name="can-swap-width-height" required="true" />
             <Limit name="concurrent-instances" max="6" />
             <Limit name="performance-point-3840x2160" value="60" />
@@ -247,9 +246,9 @@
             <Limit name="bitrate" range="1-40000000" />
             <Limit name="frame-rate" range="1-60" />
             <Feature name="adaptive-playback" />
-            <Feature name="dynamic-color-aspects" />
             <Feature name="secure-playback" required="true" />
             <Feature name="low-latency" />
+            <Feature name="dynamic-color-aspects" />
             <Feature name="can-swap-width-height" required="true" />
             <Limit name="concurrent-instances" max="3" />
             <Limit name="performance-point-3840x2160" value="60" />
@@ -303,9 +302,9 @@
             <Limit name="size" min="128x128" max="512x512" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="64" max="20480" />
+            <Limit name="blocks-per-second" min="64" max="2073600" />
             <Limit name="bitrate" range="1-100000000" />
-            <Limit name="frame-rate" range="1-20" />
+            <Limit name="frame-rate" range="1-240" />
             <Limit name="concurrent-instances" max="16" />
             <Limit name="quality" range="0-100" default="80" />
             <Feature name="bitrate-modes" value="CQ" />

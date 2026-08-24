@@ -1251,3 +1251,11 @@ INSERT OR REPLACE INTO "qcril_emergency_source_mcc_mnc_table" VALUES('706','01',
 INSERT OR REPLACE INTO "qcril_emergency_source_mcc_mnc_table" VALUES('706','01','132','','');
 
 
+
+CREATE TABLE IF NOT EXISTS qcril_properties_table (property TEXT, def_val TEXT, value TEXT, PRIMARY KEY(property));
+UPDATE qcril_properties_table set value='63' where property='qcrildb_version';
+
+DELETE FROM qcril_emergency_source_mcc_table where MCC = '420' AND NUMBER = '993';
+INSERT OR REPLACE INTO "qcril_emergency_source_mcc_table" VALUES('420','994','','');
+INSERT OR REPLACE INTO "qcril_emergency_source_mcc_table" VALUES('420','996','','');
+
