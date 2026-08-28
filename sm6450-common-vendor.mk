@@ -910,13 +910,3 @@ PRODUCT_PACKAGES += \
     fm_hci.xml
 
 endif
-
-ifeq ($(TARGET_HAS_ESIM),true)
-
-PRODUCT_COPY_FILES += \
-    vendor/motorola/sm6450-common/proprietary/product/etc/permissions/privapp-permissions-com.google.android.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.google.android.euicc.xml
-
-PRODUCT_PACKAGES += \
-    EuiccGoogle
-
-endif
